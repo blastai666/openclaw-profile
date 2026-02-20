@@ -1,0 +1,12 @@
+# OpenClaw Completion
+source "/Users/blastai/.openclaw/completions/openclaw.zsh"
+export PATH=~/.npm-global/bin:$PATH
+export TUSHARE_TOKEN="3421453a76aea411f074906d9ef4ec5ac9d053fc88e5d1327d06a581"
+export TUSHARE_TOKEN="3421453a76aea411f074906d9ef4ec5ac9d053fc88e5d1327d06a581"
+
+# Brave Search API Key
+export BRAVE_API_KEY="BSAZ6SYvR2UtXQegygALCsfpJsBw8tY"
+export TUSHARE_TOKEN="3421453a76aea411f074906d9ef4ec5ac9d053fc88e5d1327d06a581"
+export BRAVE_ANSWERS_API_KEY="BSAIbAcNjVQEVvpcMjM35QBeXQg64xY"
+export BRAVE_AUTOSUGGEST_API_KEY="BSAEtJNAkwud-1LmRDsE-VBuwA1sytp"
+export BRAVE_SPELLCHECK_API_KEY="BSASrEXdvIOcowi8l1PHqNILRRMwGvT"

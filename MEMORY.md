@@ -1,5 +1,27 @@
 # 长期记忆
 
+## 🔑 API Keys 配置
+
+### Brave Search API Keys（更新于 2026-02-20）
+**配置位置**: `~/.zshrc`
+
+| 环境变量 | 用途 | Key | 状态 |
+|---------|------|-----|------|
+| `BRAVE_API_KEY` | 搜索 API | `BSAZ6SYvR2UtXQegygALCsfpJsBw8tY` | ✅ 有效 |
+| `BRAVE_ANSWERS_API_KEY` | Answers API | `BSAIbAcNjVQEVvpcMjM35QBeXQg64xY` | ✅ 有效 |
+| `BRAVE_AUTOSUGGEST_API_KEY` | Autosuggest API | `BSAEtJNAkwud-1LmRDsE-VBuwA1sytp` | ✅ 有效 |
+| `BRAVE_SPELLCHECK_API_KEY` | Spellcheck API | `BSASrEXdvIOcowi8l1PHqNILRRMwGvT` | ✅ 有效 |
+
+**用途**:
+- `BRAVE_API_KEY`: web_search 工具、新闻聚合脚本
+- `BRAVE_ANSWERS_API_KEY`: 高级搜索功能
+- `BRAVE_AUTOSUGGEST_API_KEY`: 搜索建议
+- `BRAVE_SPELLCHECK_API_KEY`: 拼写检查
+
+**配置时间**: 2026-02-20 (13:56-14:10)
+
+---
+
 ## 重要资源
 
 - **ClawHub 技能仓库**: https://github.com/VoltAgent/awesome-openclaw-skills
@@ -61,6 +83,23 @@
 - **多源验证**: 交叉验证不同平台的信息准确性
 - **报告生成**: 自动生成结构化监控报告
 
+### 全球新闻日报来源（更新于 2026-02-19）
+**高优先级**：
+- TechURLs.com (https://techurls.com) - 科技新闻聚合 ⭐
+
+**RSS 权威媒体**：
+- 纽约时报 (NYTimes RSS)
+- BBC News (RSS)
+- 路透社 (Reuters RSS)
+
+**X 推特高质量账号** (12 个)：
+- @Reuters @AP @BBCBreaking @nytimes @Bloomberg @CNN @WSJ @FT @ReutersWorld @BreakingNews @AJEnglish @guardian
+
+**中文新闻源**：
+- 华尔街见闻 (财经)
+- 微博热搜 (社交)
+- 36Kr (科技财经)
+
 ## 技能管理
 
 ### 核心技能策略
@@ -87,6 +126,19 @@ cat ~/.openclaw/core-skills.json
 
 # 添加核心技能（手动）
 jq '.core_skills += ["新技能名"]' ~/.openclaw/core-skills.json > /tmp/temp.json && mv /tmp/temp.json ~/.openclaw/core-skills.json
+```
+
+### 技能安装检查（重要教训）
+**问题**：2026-02-20 发现 `self-reflection` 技能安装后缺少 `bin/` 目录和可执行脚本
+**解决方案**：
+1. 检查新安装技能是否包含 `bin/` 目录
+2. 如果缺失，根据 SKILL.md/README.md 手动创建 CLI 工具
+3. 确保脚本可执行：`chmod +x bin/script-name`
+4. 更新 cron 任务使用完整路径调用
+
+**检查命令**：
+```bash
+ls -la ~/.openclaw/workspace/skills/<skill-name>/bin/
 ```
 
 ## 航母位置追踪
